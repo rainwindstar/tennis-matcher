@@ -12,17 +12,17 @@ import {
 } from 'recharts';
 
 const MEMBER_PHOTOS = {
-  '강경호': '/photos/강경호.jpg',
-  '김관우': '/photos/김관우.jpg',
-  '김두수': '/photos/김두수.jpg',
-  '박천욱': '/photos/박천욱.jpg',
-  '서영교': '/photos/서영교.jpg',
-  '오세구': '/photos/오세구.jpg',
-  '이장민': '/photos/이장민.jpg',
-  '이훈준': '/photos/이훈준.jpg',
-  '최성부': '/photos/최성부.jpg',
-  '안경효': '/photos/안경효.jpg',
-  '이동덕': '/photos/이동덕.jpg',
+  '강경??: '/photos_real/강경??jpg',
+  '김관??: '/photos_real/김관??jpg',
+  '김?�수': '/photos_real/김?�수.jpg',
+  '박천??: '/photos_real/박천??jpg',
+  '?�영�?: '/photos_real/?�영�?jpg',
+  '?�세�?: '/photos_real/?�세�?jpg',
+  '?�장�?: '/photos_real/?�장�?jpg',
+  '?�훈준': '/photos_real/?�훈준.jpg',
+  '최성부': '/photos_real/최성부.jpg',
+  '?�경??: '/photos_real/?�경??jpg',
+  '?�동??: '/photos_real/?�동??jpg',
 };
 
 const MemberAvatar = ({ photo, name, size = 60 }) => {
@@ -48,75 +48,75 @@ const MemberAvatar = ({ photo, name, size = 60 }) => {
 };
 
 const DEFAULT_MEMBERS = [
-  '강경호', '김두수', '서영교', '김관우', '오세구',
-  '이장민', '박천욱', '이동덕', '이훈준', '최성부', '안경효'
+  '강경??, '김?�수', '?�영�?, '김관??, '?�세�?,
+  '?�장�?, '박천??, '?�동??, '?�훈준', '최성부', '?�경??
 ];
 
 const COLORS = ['#4F46E5', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899'];
 
-// 승률 구간별 TMI 코멘트 풀 50개 — 분기(Q1~Q4)별로 시작 오프셋이 달라져 계절마다 다른 코멘트가 먼저 나옴
+// ?�률 구간�?TMI 코멘???� 50�???분기(Q1~Q4)별로 ?�작 ?�프?�이 ?�라??계절마다 ?�른 코멘?��? 먼�? ?�옴
 const ALL_FUN_COMMENTS = {
   none: [
-    '아직 몸 풀기 중... 오늘의 다크호스 대기 중 🐴',
-    '워밍업 모드 ON. 진짜 실력은 지금부터 🎯',
-    '경기 전 신비주의 전략? 모두가 주목 중 👀',
-    '아직 베일에 싸인 실력... 오늘 공개 예정 🎭',
-    '코트 적응 중. 라켓과 친해지는 시간 필요 🤝',
-    '등장 전 충전 완료 중... 배터리 100% 🔋',
+    '?�직 �??��?�?.. ?�늘???�크?�스 ?��?�??��',
+    '?�밍??모드 ON. 진짜 ?�력?� 지금�????��',
+    '경기 ???�비주의 ?�략? 모두가 주목 �???',
+    '?�직 베일???�인 ?�력... ?�늘 공개 ?�정 ?��',
+    '코트 ?�응 �? ?�켓�?친해지???�간 ?�요 ?��',
+    '?�장 ??충전 ?�료 �?.. 배터�?100% ?��',
   ],
   high: [
-    '오늘 라켓에 GPS 달았나요? 공이 다 찾아가네 🎯',
-    '혹시 어젯밤 코트에서 혼자 연습했나요? 왜 이렇게 잘해 😤',
-    '상대팀이 네트 넘기 두려워하는 게 느껴진다 🏆',
-    '이 분 맞은 공은 심판도 "어?" 하는 중 😮',
-    '승리요정이 아니라 승리천사급! 하늘에서 내려왔나요 🏅',
-    '오늘 모든 공이 "저 잡아주세요" 하며 오는 것 같음 🎾',
-    '코트 위의 지배자. 상대방 선글라스가 반사되는 중 😎',
-    '저 사람 라켓에 AI 칩 박혀있는 거 아닌가요? 🤖',
-    '완벽한 폼, 완벽한 샷. 오늘 최강자 인정 👑',
-    '테니스 신이 강림하셨습니다. 모두 경배 🙏',
+    '?�늘 ?�켓??GPS ?�았?�요? 공이 ??찾아가???��',
+    '?�시 ?�젯�?코트?�서 ?�자 ?�습?�나?? ???�렇�??�해 ?��',
+    '?��??�???�트 ?�기 ?�려?�하??�??�껴진다 ?��',
+    '??�?맞�? 공�? ?�판??"??" ?�는 �??��',
+    '?�리?�정???�니???�리천사�? ?�늘?�서 ?�려?�나???��',
+    '?�늘 모든 공이 "?� ?�아주세?? ?�며 ?�는 �?같음 ?��',
+    '코트 ?�의 지배자. ?��?�??��??�스가 반사?�는 �??��',
+    '?� ?�람 ?�켓??AI �?박�??�는 �??�닌가?? ?��',
+    '?�벽???? ?�벽???? ?�늘 최강???�정 ?��',
+    '?�니???�이 강림?�셨?�니?? 모두 경배 ?��',
   ],
   midHigh: [
-    '상승세 미쳤다! 오늘 분위기 심상치 않음 🔥',
-    '연승 본능이 각성 중. 다음 상대 조심해! 💪',
-    '컨디션 100점 만점에 99점. 나머지 1점은 겸손 😏',
-    '이기는 맛 아는 사람 특유의 여유로움 ✨',
-    '오늘 서브 들어갈 때마다 상대팀 한숨 소리 들림 😅',
-    '실력 상향 중! 다음 달엔 코치 자격증 따실 기세 📜',
-    '코트 위 센터포워드. 볼 배급도 남다르다 🎯',
-    '오늘 경기 영상 찍어두는 거 추천. 나중에 팔 수 있음 📹',
+    '?�승??미쳤?? ?�늘 분위�??�상�??�음 ?��',
+    '?�승 본능??각성 �? ?�음 ?��? 조심?? ?��',
+    '컨디??100??만점??99?? ?�머지 1?��? 겸손 ?��',
+    '?�기??�??�는 ?�람 ?�유???�유로�? ??,
+    '?�늘 ?�브 ?�어�??�마???��??� ?�숨 ?�리 ?�림 ?��',
+    '?�력 ?�향 �? ?�음 ?�엔 코치 ?�격�??�실 기세 ?��',
+    '코트 ???�터?�워?? �?배급???�다르다 ?��',
+    '?�늘 경기 ?�상 찍어?�는 �?추천. ?�중???????�음 ?��',
   ],
   even: [
-    '이기고 지고... 코트 위 인생 철학자 ⚖️',
-    '승과 패 사이 완벽한 균형의 미학 🧘',
-    '반반 치킨 같은 오늘의 성적. 근데 맛있잖아요 🍗',
-    '이분 혹시 승률 50% 유지가 목표인가요? 놀랍도록 정확함 🎪',
-    '오늘 코트 위의 시소게임 담당. 절묘한 균형 🎭',
-    '이기고 지는 게 반반인데 왜 이렇게 쿨해 보이지? 😎',
-    '코트의 음양 조화. 이기면 좋고 져도 쿨한 자태 ☯️',
-    '50% 승률... 혹시 상대방 배려하는 건가요? 🤔',
+    '?�기�?지�?.. 코트 ???�생 철학???�️',
+    '?�과 ???�이 ?�벽??균형??미학 ?��',
+    '반반 치킨 같�? ?�늘???�적. 근데 맛있?�아???��',
+    '?�분 ?�시 ?�률 50% ?��?가 목표?��??? ?�?�도�??�확???��',
+    '?�늘 코트 ?�의 ?�소게임 ?�당. ?�묘??균형 ?��',
+    '?�기�?지??�?반반?�데 ???�렇�?쿨해 보이지? ?��',
+    '코트???�양 조화. ?�기�?좋고 ?�도 쿨한 ?�태 ??��',
+    '50% ?�률... ?�시 ?��?�?배려?�는 건�??? ?��',
   ],
   midLow: [
-    '착실히 내공 쌓는 중. 다음 게임은 반드시 다름 💪',
-    '오늘은 연습, 다음엔 실전! 데이터 수집 완료 📊',
-    '괜찮아요, 나달도 매번 이긴 건 아니에요 (아마도) 😌',
-    '지금 지고 있지만 표정은 이미 승리자 같음 😄',
-    '오늘 진 게임에서 배운 것이 이긴 게임보다 많은 법 📚',
-    '패배를 거름 삼아 내일 꽃 피울 예정 🌸',
-    '현재 재충전 중. 배터리 충전량 47% 🔋',
-    '미래의 MVP가 지금 열심히 패배를 맛보고 있는 중 👀',
-    '오늘 컨디션이 살짝... 근데 표정만은 에이스 😤',
-    '다음 게임에서 오늘 설욕 기대됩니다! 🎯',
+    '착실???�공 ?�는 �? ?�음 게임?� 반드???�름 ?��',
+    '?�늘?� ?�습, ?�음???�전! ?�이???�집 ?�료 ?��',
+    '괜찮?�요, ?�달??매번 ?�긴 �??�니?�요 (?�마?? ?��',
+    '지�?지�??��?�??�정?� ?��? ?�리??같음 ?��',
+    '?�늘 �?게임?�서 배운 것이 ?�긴 게임보다 많�? �??��',
+    '?�배�?거름 ?�아 ?�일 �??�울 ?�정 ?��',
+    '?�재 ?�충??�? 배터�?충전??47% ?��',
+    '미래??MVP가 지�??�심???�배�?맛보�??�는 �???',
+    '?�늘 컨디?�이 ?�짝... 근데 ?�정만�? ?�이???��',
+    '?�음 게임?�서 ?�늘 ?�욕 기�??�니?? ?��',
   ],
   low: [
-    '오늘은 컨디션이 좀... 코트의 신이 잠시 휴가 중 🏖️',
-    '공이 자꾸 다른 코트로 놀러 가는 중 🏃',
-    '오늘만 날인가요, 내일은 분명 다를 겁니다! 🌅',
-    '라켓이 먼저 항복 선언을 했나봐요 🏳️',
-    '오늘 날씨 탓으로 돌리고 싶은 심정 아닌가요? 🌧️',
-    '코트가 오늘따라 이상하게 기울어진 느낌 🤔',
-    '다음 게임 멋지게 설욕전 가즈아! 🔥',
-    '오늘 진 것보다 앞으로 이길 게 더 많습니다 화이팅 💙',
+    '?�늘?� 컨디?�이 좀... 코트???�이 ?�시 ?��? �??���?,
+    '공이 ?�꾸 ?�른 코트�??�??가??�??��',
+    '?�늘�??�인가?? ?�일?� 분명 ?��? 겁니?? ?��',
+    '?�켓??먼�? ??�� ?�언???�나봐요 ?���?,
+    '?�늘 ?�씨 ?�으�??�리�??��? ?�정 ?�닌가?? ?���?,
+    '코트가 ?�늘?�라 ?�상?�게 기울?�진 ?�낌 ?��',
+    '?�음 게임 멋�?�??�욕??가즈아! ?��',
+    '?�늘 �?것보???�으�??�길 �???많습?�다 ?�이???��',
   ],
 };
 
@@ -186,7 +186,7 @@ export default function App() {
   const [editingMatchId, setEditingMatchId] = useState(null);
   const [editMatchData, setEditMatchData] = useState(null);
   
-  // 구글 시트 웹앱 URL (사용자가 스크립트 배포 후 여기에 입력)
+  // 구�? ?�트 ?�앱 URL (?�용?��? ?�크립트 배포 ???�기???�력)
   const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbykBfHos2qYIjppp0Dut-ILnYVsDAoUIOhmuUobgaAvn9QV4-fqJQTXjEOP6X_MvaEkRg/exec'; 
 
   
@@ -223,7 +223,7 @@ export default function App() {
     if (!trimmed) return;
     const oldName = coreMembers[idx];
     setCoreMembers(prev => prev.map((m, i) => i === idx ? trimmed : m));
-    // 출석 명단에서도 이름 업데이트
+    // 출석 명단?�서???�름 ?�데?�트
     setAttendees(prev => prev.map(a => a === oldName ? trimmed : a));
     setEditingMemberIdx(null);
     setEditingMemberName('');
@@ -294,7 +294,7 @@ export default function App() {
     localStorage.setItem('tennis_tiebreakPoints', JSON.stringify(tiebreakPoints));
   }, [tiebreakPoints]);
 
-  // === 친구들과 실시간으로 공유하는 상태 동기화 (InsForge: tennis_shared_state 단일 행) ===
+  // === 친구?�과 ?�시간으�?공유?�는 ?�태 ?�기??(InsForge: tennis_shared_state ?�일 ?? ===
   const SHARED_STATE_ID = 1;
   const isHydratedRef = useRef(false);
   const lastSyncedRef = useRef('');
@@ -334,7 +334,7 @@ export default function App() {
     setCompletedMatches(normalized.schedule.filter(m => m.isCompleted));
   };
 
-  // 최초 로드: 서버 공유 상태를 가져와 반영하거나, 서버가 비어있으면 내 로컬 데이터를 시드로 업로드
+  // 최초 로드: ?�버 공유 ?�태�?가?��? 반영?�거?? ?�버가 비어?�으�???로컬 ?�이?��? ?�드�??�로??
   useEffect(() => {
     (async () => {
       const { data, error } = await insforge.database
@@ -365,7 +365,7 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // 변경 사항을 디바운스 후 서버에 업로드 (내가 기록 중/완료한 내용을 친구들에게 전파)
+  // 변�??�항???�바?�스 ???�버???�로??(?��? 기록 �??�료???�용??친구?�에�??�파)
   useEffect(() => {
     if (!isHydratedRef.current) return;
     if (pushTimerRef.current) clearTimeout(pushTimerRef.current);
@@ -379,7 +379,7 @@ export default function App() {
     return () => clearTimeout(pushTimerRef.current);
   }, [attendees, coreMembers, schedule, scheduleGenerated, liveMatchId, livePoints, isTiebreak, tiebreakPoints]);
 
-  // 친구들의 변경사항을 주기적으로 확인해 반영 (5초 폴링)
+  // 친구?�의 변경사??�� 주기?�으�??�인??반영 (5�??�링)
   useEffect(() => {
     const timer = setInterval(async () => {
       if (!isHydratedRef.current) return;
@@ -408,18 +408,18 @@ export default function App() {
           headers: { Authorization: `Bearer ${import.meta.env.VITE_INSFORGE_ANON_KEY}` },
         });
         if (res.ok) setSessions(await res.json());
-      } catch { /* 오프라인 시 무시 */ }
+      } catch { /* ?�프?�인 ??무시 */ }
     })();
   }, []);
 
-  // 타이브레이크 시작
+  // ?�?�브?�이???�작
   const startTiebreak = () => {
     setIsTiebreak(true);
     setTiebreakPoints({ A: 0, B: 0 });
     setLivePoints({ A: 0, B: 0 });
   };
 
-  // 타이브레이크 점수 올리기 (일반 숫자 1씩)
+  // ?�?�브?�이???�수 ?�리�?(?�반 ?�자 1??
   const incrementTiebreak = (team) => {
     setTiebreakPoints(prev => ({
       ...prev,
@@ -427,7 +427,7 @@ export default function App() {
     }));
   };
 
-  // 타이브레이크 점수 내리기
+  // ?�?�브?�이???�수 ?�리�?
   const decrementTiebreak = (team) => {
     setTiebreakPoints(prev => ({
       ...prev,
@@ -435,7 +435,7 @@ export default function App() {
     }));
   };
 
-  // 타이브레이크 취소
+  // ?�?�브?�이??취소
   const cancelTiebreak = () => {
     setIsTiebreak(false);
     setTiebreakPoints({ A: 0, B: 0 });
@@ -488,13 +488,13 @@ export default function App() {
     const losses = Object.values(playerStats).reduce((acc, p) => acc + p.losses, 0);
     const draws = Object.values(playerStats).reduce((acc, p) => acc + (p.draws||0), 0);
     return [
-      { name: '승리', value: wins },
+      { name: '?�리', value: wins },
       { name: '무승부', value: draws },
-      { name: '패배', value: losses }
+      { name: '?�배', value: losses }
     ];
   }, [playerStats]);
 
-  // 파트너 궁합 분석
+  // ?�트??궁합 분석
   const partnerStats = useMemo(() => {
     const pairs = {};
     completedMatches.forEach(match => {
@@ -684,7 +684,7 @@ export default function App() {
       .sort((a, b) => b.games - a.games || Math.abs(b.pointDiff) - Math.abs(a.pointDiff));
   }, [completedMatches]);
 
-  // TMI 코멘트: 전 선수를 한꺼번에 계산해 세션 내 중복을 방지하고 분기별 오프셋 적용
+  // TMI 코멘?? ???�수�??�꺼번에 계산???�션 ??중복??방�??�고 분기�??�프???�용
   const tmiComments = useMemo(() => {
     const result = {};
     const used = new Set();
@@ -720,9 +720,9 @@ export default function App() {
     return result;
   }, [playerStats]);
 
-  // 경기 기록 저장
+  // 경기 기록 ?�??
   const saveSession = async () => {
-    if (completedMatches.length === 0) { alert('저장할 경기 결과가 없습니다.'); return; }
+    if (completedMatches.length === 0) { alert('?�?�할 경기 결과가 ?�습?�다.'); return; }
     try {
       const payload = { session_date: matchDate, attendees, matches: completedMatches, stats: playerStats };
       const res = await fetch(`${import.meta.env.VITE_INSFORGE_URL}/api/database/records/tennis_sessions`, {
@@ -731,16 +731,16 @@ export default function App() {
         body: JSON.stringify(payload),
       });
       if (res.ok) {
-        alert('경기 기록이 저장되었습니다!');
+        alert('경기 기록???�?�되?�습?�다!');
         const listRes = await fetch(`${import.meta.env.VITE_INSFORGE_URL}/api/database/records/tennis_sessions?order=session_date.desc`, {
           headers: { Authorization: `Bearer ${import.meta.env.VITE_INSFORGE_ANON_KEY}` },
         });
         if (listRes.ok) setSessions(await listRes.json());
-      } else { alert('저장에 실패했습니다.'); }
-    } catch { alert('저장에 실패했습니다.'); }
+      } else { alert('?�?�에 ?�패?�습?�다.'); }
+    } catch { alert('?�?�에 ?�패?�습?�다.'); }
   };
 
-  // HTML 대시보드 내보내기
+  // HTML ?�?�보???�보?�기
   const exportDashboard = () => {
     const dateStr = format(new Date(), 'yyyy-MM-dd');
     const today = new Date().toLocaleDateString('ko-KR', {year:'numeric',month:'long',day:'numeric'});
@@ -749,18 +749,18 @@ export default function App() {
     const rows = matchPlayers.map(a => {
       const st = playerStats[a]||{games:0,wins:0,losses:0,draws:0,points:0};
       const wr = st.games>0 ? Math.round(st.wins/st.games*100) : 0;
-      return `<tr><td><b>${a}</b></td><td>${st.games}</td><td style="color:#10B981">${st.wins}승</td><td style="color:#EF4444">${st.losses}패</td><td style="color:#F59E0B">${st.draws||0}무</td><td>${st.points}pts</td><td>${wr}%</td></tr>`;
+      return `<tr><td><b>${a}</b></td><td>${st.games}</td><td style="color:#10B981">${st.wins}??/td><td style="color:#EF4444">${st.losses}??/td><td style="color:#F59E0B">${st.draws||0}�?/td><td>${st.points}pts</td><td>${wr}%</td></tr>`;
     }).join('');
     const matchRows = completedMatches.map(m => {
-      const res = m.scoreA>m.scoreB?'A팀 승':'';
-      const res2 = m.scoreB>m.scoreA?'B팀 승':res;
+      const res = m.scoreA>m.scoreB?'A?� ??:'';
+      const res2 = m.scoreB>m.scoreA?'B?� ??:res;
       const result = m.scoreA===m.scoreB?'무승부':res2;
       return `<tr><td>${m.id}경기</td><td>${m.teamA.join(', ')}</td><td style="font-size:20px;font-weight:900">${m.scoreA} : ${m.scoreB}</td><td>${m.teamB.join(', ')}</td><td>${result}</td></tr>`;
     }).join('');
-    const pairRows = partnerStats.map(p => `<tr><td><b>${p.players.join(' & ')}</b></td><td>${p.games}</td><td>${p.wins}승</td><td>${p.draws}무</td></tr>`).join('');
+    const pairRows = partnerStats.map(p => `<tr><td><b>${p.players.join(' & ')}</b></td><td>${p.games}</td><td>${p.wins}??/td><td>${p.draws}�?/td></tr>`).join('');
     const html = `<!DOCTYPE html>
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🎾 테니스 경기 결과 - ${today}</title>
+<title>?�� ?�니??경기 결과 - ${today}</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Noto Sans KR',sans-serif;}
@@ -783,16 +783,16 @@ td{padding:10px 4px;border-bottom:1px solid #1e293b;font-size:14px;}
 footer{text-align:center;color:#475569;margin-top:24px;font-size:12px;}
 </style></head><body>
 <div class="container">
-<h1>🎾 테니스 경기 결과</h1>
-<p class="date">${today} · 총 ${completedMatches.length}게임</p>
-${topP ? `<div class="mvp"><div>🏆 오늘의 테니스 킹!</div><div class="name">${topP.name}</div><div class="stat">${topP.wins}승 ${topP.losses}패 ${topP.draws||0}무 / ${topP.points}pts</div></div>` : ''}
-<div class="card"><h2>📊 경기 결과</h2>
-<table><thead><tr><th>경기</th><th>A팀</th><th>스코어</th><th>B팀</th><th>결과</th></tr></thead>
+<h1>?�� ?�니??경기 결과</h1>
+<p class="date">${today} · �?${completedMatches.length}게임</p>
+${topP ? `<div class="mvp"><div>?�� ?�늘???�니????</div><div class="name">${topP.name}</div><div class="stat">${topP.wins}??${topP.losses}??${topP.draws||0}�?/ ${topP.points}pts</div></div>` : ''}
+<div class="card"><h2>?�� 경기 결과</h2>
+<table><thead><tr><th>경기</th><th>A?�</th><th>?�코??/th><th>B?�</th><th>결과</th></tr></thead>
 <tbody>${matchRows}</tbody></table></div>
-<div class="card"><h2>👤 개인 기록</h2>
-<table><thead><tr><th>이름</th><th>참여</th><th>승</th><th>패</th><th>무</th><th>점수</th><th>승률</th></tr></thead>
+<div class="card"><h2>?�� 개인 기록</h2>
+<table><thead><tr><th>?�름</th><th>참여</th><th>??/th><th>??/th><th>�?/th><th>?�수</th><th>?�률</th></tr></thead>
 <tbody>${rows}</tbody></table></div>
-${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><tr><th>조합</th><th>게임</th><th>승</th><th>무</th></tr></thead><tbody>${pairRows}</tbody></table></div>` : ''}
+${pairRows ? `<div class="card"><h2>?�� 베스???�트??/h2><table><thead><tr><th>조합</th><th>게임</th><th>??/th><th>�?/th></tr></thead><tbody>${pairRows}</tbody></table></div>` : ''}
 <footer>Tennis Matcher Pro · ${today}</footer>
 </div></body></html>`;
     const blob = new Blob([html], {type:'text/html;charset=utf-8'});
@@ -810,8 +810,8 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
 
   const addGuest = (e) => {
     e.preventDefault();
-    if (guestName.trim() && !attendees.includes(`${guestName.trim()}(게스트)`)) {
-      setAttendees([...attendees, `${guestName.trim()}(게스트)`]);
+    if (guestName.trim() && !attendees.includes(`${guestName.trim()}(게스??`)) {
+      setAttendees([...attendees, `${guestName.trim()}(게스??`]);
       setGuestName('');
     }
   };
@@ -819,7 +819,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
   const generateFullSchedule = (targetGames) => {
     const N = attendees.length;
     if (N < 4) {
-      alert("매칭을 위해 최소 4명이 필요합니다.");
+      alert("매칭???�해 최소 4명이 ?�요?�니??");
       return;
     }
     
@@ -1001,16 +1001,16 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
   };
 
   const deleteGame = (matchId) => {
-    if (window.confirm(`${matchId}번 경기를 삭제하시겠습니까?`)) {
+    if (window.confirm(`${matchId}�?경기�???��?�시겠습?�까?`)) {
       setSchedule(prev => prev.filter(m => m.id !== matchId));
       setCompletedMatches(prev => prev.filter(m => m.id !== matchId));
       if (editingMatchId === matchId) cancelEditMatch();
     }
   };
 
-  // 저장된 경기 결과를 다시 진행 상태로 되돌려 점수/멤버를 재입력할 수 있게 함
+  // ?�?�된 경기 결과�??�시 진행 ?�태�??�돌???�수/멤버�??�입?�할 ???�게 ??
   const reopenMatch = (matchId) => {
-    if (!window.confirm(`${matchId}번 경기 결과를 수정하시겠습니까?\n저장된 결과가 초기화되고, 점수와 멤버를 다시 입력한 뒤 [결과 로컬 저장]을 눌러야 반영됩니다.`)) return;
+    if (!window.confirm(`${matchId}�?경기 결과�??�정?�시겠습?�까?\n?�?�된 결과가 초기?�되�? ?�수?� 멤버�??�시 ?�력????[결과 로컬 ?�?????�러??반영?�니??`)) return;
     setSchedule(prev => prev.map(m => m.id === matchId
       ? { ...m, isCompleted: false, hasTiebreak: false, tiebreakA: null, tiebreakB: null, timestamp: null }
       : m));
@@ -1076,8 +1076,8 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
   };
 
   const saveMatchResult = async (match) => {
-    const tbInfo = isTiebreak ? ` (타이브레이크 ${tiebreakPoints.A}:${tiebreakPoints.B})` : '';
-    const isConfirmed = window.confirm(`${match.id}번 경기 결과를 저장하시겠습니까?\n게임: ${match.scoreA}:${match.scoreB}${tbInfo}\n(로컬에 저장되며, 전체 경기가 끝나면 대시보드 탭에서 구글 시트로 일괄 저장해 주세요)`);
+    const tbInfo = isTiebreak ? ` (?�?�브?�이??${tiebreakPoints.A}:${tiebreakPoints.B})` : '';
+    const isConfirmed = window.confirm(`${match.id}�?경기 결과�??�?�하?�겠?�니�?\n게임: ${match.scoreA}:${match.scoreB}${tbInfo}\n(로컬???�?�되�? ?�체 경기가 ?�나�??�?�보????��??구�? ?�트�??�괄 ?�?�해 주세??`);
     if (!isConfirmed) return;
 
     const completedMatch = {
@@ -1089,7 +1089,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
       tiebreakB: isTiebreak ? tiebreakPoints.B : null,
     };
     
-    // 로컬 상태 먼저 업데이트 (빠른 UI 반응)
+    // 로컬 ?�태 먼�? ?�데?�트 (빠른 UI 반응)
     setSchedule(prev => prev.map(m => m.id === match.id ? completedMatch : m));
     setCompletedMatches(prev => {
       if (prev.find(m => m.id === match.id)) return prev.map(m => m.id === match.id ? completedMatch : m);
@@ -1108,11 +1108,11 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
   
   const syncToGoogleSheets = async () => {
     if (completedMatches.length === 0) {
-      alert('저장할 완료된 경기가 없습니다.');
+      alert('?�?�할 ?�료??경기가 ?�습?�다.');
       return;
     }
     
-    const isConfirmed = window.confirm(`총 ${completedMatches.length}개의 경기 결과를 구글 시트에 일괄 저장하시겠습니까?`);
+    const isConfirmed = window.confirm(`�?${completedMatches.length}개의 경기 결과�?구�? ?�트???�괄 ?�?�하?�겠?�니�?`);
     if (!isConfirmed) return;
     
     setIsSyncing(true);
@@ -1122,9 +1122,9 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
           date: `${matchDate} ${format(new Date(completedMatch.timestamp), 'HH:mm')}`,
           matchId: completedMatch.id,
           teamA: completedMatch.teamA.join(', '),
-          teamB: completedMatch.scoreA,            // A팀 점수를 teamB 키로 전송 (Apps Script 오류 우회)
-          scoreA: completedMatch.scoreB,           // B팀 점수를 scoreA 키로 전송
-          scoreB: completedMatch.teamB.join(', '), // B팀 명단을 scoreB 키로 전송
+          teamB: completedMatch.scoreA,            // A?� ?�수�?teamB ?�로 ?�송 (Apps Script ?�류 ?�회)
+          scoreA: completedMatch.scoreB,           // B?� ?�수�?scoreA ?�로 ?�송
+          scoreB: completedMatch.teamB.join(', '), // B?� 명단??scoreB ?�로 ?�송
           hasTiebreak: completedMatch.hasTiebreak ? 'Y' : 'N',
           tiebreakA: completedMatch.hasTiebreak ? completedMatch.tiebreakA : '',
           tiebreakB: completedMatch.hasTiebreak ? completedMatch.tiebreakB : ''
@@ -1139,16 +1139,16 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
       });
       
       await Promise.all(promises);
-      alert('구글 시트에 모든 경기 결과 저장이 완료되었습니다!');
+      alert('구�? ?�트??모든 경기 결과 ?�?�이 ?�료?�었?�니??');
     } catch (error) {
-      console.error('구글 시트 전송 오류:', error);
-      alert('구글 시트 저장 중 오류가 발생했습니다.');
+      console.error('구�? ?�트 ?�송 ?�류:', error);
+      alert('구�? ?�트 ?�??�??�류가 발생?�습?�다.');
     }
     setIsSyncing(false);
   };
 
   const resetAllData = () => {
-    if(window.confirm('모든 데이터를 초기화하시겠습니까?\n(현재의 출석, 스케줄, 점수 모두 삭제됩니다)')) {
+    if(window.confirm('모든 ?�이?��? 초기?�하?�겠?�니�?\n(?�재??출석, ?��?�? ?�수 모두 ??��?�니??')) {
       setAttendees([]);
       setSchedule([]);
       setScheduleGenerated(false);
@@ -1159,7 +1159,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
     }
   };
 
-  // 공동 1위까지 모두 포함한 오늘의 MVP 목록 (승수 → 포인트 동률이면 전부 포함)
+  // 공동 1?�까지 모두 ?�함???�늘??MVP 목록 (?�수 ???�인???�률?�면 ?��? ?�함)
   const topPlayers = useMemo(() => {
     const players = Object.values(playerStats);
     if (players.length === 0) return [];
@@ -1169,7 +1169,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
     return sorted.filter(p => p.wins === best.wins && p.points === best.points);
   }, [playerStats]);
 
-  // 포인트 랭킹 차트의 X축에 이름+사진을 함께 그려주는 커스텀 틱
+  // ?�인????�� 차트??X축에 ?�름+?�진???�께 그려주는 커스?� ??
   const renderRankingTick = ({ x, y, payload, index }) => {
     const name = payload.value;
     const photo = getMemberPhoto(name);
@@ -1215,17 +1215,17 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
             <Users size={18} /> 출석
           </button>
           <button className={`tab-btn ${activeTab === 'schedule' ? 'active' : ''}`} onClick={() => setActiveTab('schedule')}>
-            <CalendarDays size={18} /> 전체 일정
+            <CalendarDays size={18} /> ?�체 ?�정
           </button>
           <button className={`tab-btn ${activeTab === 'dashboard' ? 'active' : ''}`} onClick={() => setActiveTab('dashboard')}>
-            <BarChart3 size={18} /> 대시보드
+            <BarChart3 size={18} /> ?�?�보??
           </button>
           <button className={`tab-btn ${activeTab === 'history' ? 'active' : ''}`} onClick={() => { setActiveTab('history'); setSelectedSession(null); }}>
             <History size={18} /> 기록
           </button>
           {liveMatchId && (
             <button className={`tab-btn ${activeTab === 'live' ? 'active' : ''}`} onClick={() => setActiveTab('live')} style={{color: '#EF4444', fontWeight: 'bold'}}>
-              <Flame size={18} /> 라이브 득점
+              <Flame size={18} /> ?�이�??�점
             </button>
           )}
         </nav>
@@ -1236,13 +1236,13 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
               <div className="card-header">
                 <h2>멤버 출석 체크</h2>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span className="count-badge">{attendees.length}명</span>
+                  <span className="count-badge">{attendees.length}�?/span>
                   <button
                     onClick={() => { setIsMemberEditMode(v => !v); setEditingMemberIdx(null); setNewMemberName(''); }}
                     className={`member-edit-toggle ${isMemberEditMode ? 'active' : ''}`}
-                    title={isMemberEditMode ? '편집 완료' : '멤버 편집'}
+                    title={isMemberEditMode ? '?�집 ?�료' : '멤버 ?�집'}
                   >
-                    {isMemberEditMode ? <><X size={14} /> 완료</> : <><Edit2 size={14} /> 편집</>}
+                    {isMemberEditMode ? <><X size={14} /> ?�료</> : <><Edit2 size={14} /> ?�집</>}
                   </button>
                 </div>
               </div>
@@ -1250,7 +1250,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
               {isMemberEditMode ? (
                 <div className="member-edit-grid">
                   <div style={{ fontSize: '12px', color: '#64748B', background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '10px', padding: '8px 12px', lineHeight: 1.5 }}>
-                    💡 아래에서 <b>+ 새 멤버 이름</b>으로 신규 회원을 추가하면 목록 맨 아래에 바로 나타나요. 이름 옆 <Camera size={12} style={{ verticalAlign: '-2px' }} /> 카메라 아이콘을 눌러 바로 프로필 사진을 등록/변경할 수 있습니다. 오늘만 참여하는 게스트는 아래 [게스트 추가]에서 등록해 주세요.
+                    ?�� ?�래?�서 <b>+ ??멤버 ?�름</b>?�로 ?�규 ?�원??추�??�면 목록 �??�래??바로 ?��??�요. ?�름 ??<Camera size={12} style={{ verticalAlign: '-2px' }} /> 카메???�이콘을 ?�러 바로 ?�로???�진???�록/변경할 ???�습?�다. ?�늘�?참여?�는 게스?�는 ?�래 [게스??추�?]?�서 ?�록??주세??
                   </div>
                   {coreMembers.map((member, idx) => (
                     <div key={idx} className="member-edit-item">
@@ -1264,7 +1264,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                             className="member-name-input"
                             maxLength={8}
                           />
-                          <button onClick={() => saveEditMember(idx)} className="member-action-btn save" title="저장"><Save size={13} /></button>
+                          <button onClick={() => saveEditMember(idx)} className="member-action-btn save" title="?�??><Save size={13} /></button>
                           <button onClick={() => setEditingMemberIdx(null)} className="member-action-btn cancel" title="취소"><X size={13} /></button>
                         </div>
                       ) : (
@@ -1274,27 +1274,27 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                             <span className="member-name">{member}</span>
                           </div>
                           <div className="member-action-group">
-                            <label className="member-action-btn photo" title="사진 변경" style={{ cursor: 'pointer' }}>
+                            <label className="member-action-btn photo" title="?�진 변�? style={{ cursor: 'pointer' }}>
                               <Camera size={13} />
                               <input type="file" accept="image/*" onChange={(e) => { if (e.target.files[0]) handlePhotoUpload(member, e.target.files[0]); e.target.value = ''; }} style={{ display: 'none' }} />
                             </label>
-                            <button onClick={() => startEditMember(idx)} className="member-action-btn edit" title="이름 수정"><Edit2 size={13} /></button>
-                            <button onClick={() => deleteMember(idx)} className="member-action-btn delete" title="삭제"><Trash2 size={13} /></button>
+                            <button onClick={() => startEditMember(idx)} className="member-action-btn edit" title="?�름 ?�정"><Edit2 size={13} /></button>
+                            <button onClick={() => deleteMember(idx)} className="member-action-btn delete" title="??��"><Trash2 size={13} /></button>
                           </div>
                         </div>
                       )}
                     </div>
                   ))}
-                  {/* 새 멤버 추가 */}
+                  {/* ??멤버 추�? */}
                   <form onSubmit={addCoreMember} className="member-add-form">
                     <input
                       value={newMemberName}
                       onChange={e => setNewMemberName(e.target.value)}
-                      placeholder="+ 새 멤버 이름"
+                      placeholder="+ ??멤버 ?�름"
                       className="member-name-input"
                       maxLength={8}
                     />
-                    <button type="submit" className="member-action-btn save" title="추가"><Plus size={13} /></button>
+                    <button type="submit" className="member-action-btn save" title="추�?"><Plus size={13} /></button>
                   </form>
                 </div>
               ) : (
@@ -1314,23 +1314,23 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
             </div>
 
             <div className="card mt-4">
-              <div className="card-header"><h2>게스트 추가</h2></div>
+              <div className="card-header"><h2>게스??추�?</h2></div>
               <form onSubmit={addGuest} className="guest-form">
                 <div className="input-group">
                   <UserPlus size={20} className="input-icon" />
-                  <input type="text" placeholder="이름 입력..." value={guestName} onChange={(e) => setGuestName(e.target.value)} />
-                  <button type="submit" className="btn btn-secondary">추가</button>
+                  <input type="text" placeholder="?�름 ?�력..." value={guestName} onChange={(e) => setGuestName(e.target.value)} />
+                  <button type="submit" className="btn btn-secondary">추�?</button>
                 </div>
               </form>
             </div>
 
             <div className="card mt-4 attendance-list">
-              <div className="card-header"><h2>선발 명단 ({attendees.length}명)</h2></div>
+              <div className="card-header"><h2>?�발 명단 ({attendees.length}�?</h2></div>
               <div className="chips mb-4">
                 {attendees.map(a => <span key={a} className="chip" onClick={() => toggleAttendance(a)}>{a} &times;</span>)}
               </div>
               <div className="info-box mb-4">
-                <p className="text-sm text-muted">※ 인원수에 맞는 <b>최소 균등 경기 수</b>를 계산하여 100% 공평한 스케줄을 편성합니다. 대관 시간에 맞춰 원하는 라운드를 선택하세요.</p>
+                <p className="text-sm text-muted">???�원?�에 맞는 <b>최소 균등 경기 ??/b>�?계산?�여 100% 공평???��?줄을 ?�성?�니?? ?�관 ?�간??맞춰 ?�하???�운?��? ?�택?�세??</p>
               </div>
               {attendees.length >= 4 && (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -1341,7 +1341,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                     for (let m = 1; m <= 4; m++) {
                       const tg = baseGames * m;
                       const plays = (tg * 4) / attendees.length;
-                      if (m > 1 && tg > 16) break; // 16경기 초과는 생략 (너무 긴 시간)
+                      if (m > 1 && tg > 16) break; // 16경기 초과???�략 (?�무 �??�간)
                       options.push(
                         <button 
                           key={m} 
@@ -1349,7 +1349,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                           className={`btn ${m === 1 ? 'btn-primary pulse' : 'btn-secondary'} w-full`}
                           style={{ padding: '12px', fontSize: '0.95rem' }}
                         >
-                          {tg}경기 편성 (1인당 {plays}경기 참여)
+                          {tg}경기 ?�성 (1?�당 {plays}경기 참여)
                         </button>
                       );
                     }
@@ -1363,7 +1363,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                   className="btn btn-secondary w-full" 
                   style={{ borderColor: '#EF4444', color: '#EF4444', padding: '12px', fontWeight: 'bold' }}
                 >
-                  앱 초기화 (모든 데이터 삭제)
+                  ??초기??(모든 ?�이????��)
                 </button>
               </div>
             </div>
@@ -1375,15 +1375,15 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
             {!scheduleGenerated ? (
                <div className="card center empty-state">
                  <History size={48} className="text-muted" />
-                 <h3>시간표가 없습니다</h3>
-                 <p>출석 화면에서 [시간표 생성하기]를 눌러 스케줄을 확정해주세요.</p>
-                 <button onClick={() => setActiveTab('attendance')} className="btn btn-secondary mt-4">출석 화면으로 가기</button>
+                 <h3>?�간?��? ?�습?�다</h3>
+                 <p>출석 ?�면?�서 [?�간???�성?�기]�??�러 ?��?줄을 ?�정?�주?�요.</p>
+                 <button onClick={() => setActiveTab('attendance')} className="btn btn-secondary mt-4">출석 ?�면?�로 가�?/button>
                </div>
             ) : (
                <div className="schedule-list">
                  <div className="schedule-header card mb-4 center">
-                   <h2>오늘의 자동 편성 시간표 (총 {schedule.length}게임)</h2>
-                   <p className="text-sm text-muted">경기별 점수를 입력하고 저장을 누르세요.</p>
+                   <h2>?�늘???�동 ?�성 ?�간??(�?{schedule.length}게임)</h2>
+                   <p className="text-sm text-muted">경기�??�수�??�력?�고 ?�?�을 ?�르?�요.</p>
                  </div>
                  {schedule.map((match) => {
                    const isEditing = editingMatchId === match.id;
@@ -1400,20 +1400,20 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                      {/* Edit / Delete Buttons */}
                      {!match.isCompleted && !isEditing && (
                        <div className="match-actions" style={{ position: 'absolute', top: '12px', right: '12px', display: 'flex', gap: '8px' }}>
-                         <button style={iconBtnStyle} onClick={() => startEditMatch(match)} title="수정"><Edit2 size={16} className="text-muted" /></button>
-                         <button style={iconBtnStyle} onClick={() => deleteGame(match.id)} title="삭제"><Trash2 size={16} style={{ color: '#EF4444' }} /></button>
+                         <button style={iconBtnStyle} onClick={() => startEditMatch(match)} title="?�정"><Edit2 size={16} className="text-muted" /></button>
+                         <button style={iconBtnStyle} onClick={() => deleteGame(match.id)} title="??��"><Trash2 size={16} style={{ color: '#EF4444' }} /></button>
                        </div>
                      )}
-                     {/* 완료된 경기: 결과 수정 / 삭제 */}
+                     {/* ?�료??경기: 결과 ?�정 / ??�� */}
                      {match.isCompleted && (
                        <div className="match-actions" style={{ position: 'absolute', top: '12px', right: '12px', display: 'flex', gap: '8px' }}>
-                         <button style={iconBtnStyle} onClick={() => reopenMatch(match.id)} title="결과 수정"><Edit2 size={16} className="text-muted" /></button>
-                         <button style={iconBtnStyle} onClick={() => deleteGame(match.id)} title="삭제"><Trash2 size={16} style={{ color: '#EF4444' }} /></button>
+                         <button style={iconBtnStyle} onClick={() => reopenMatch(match.id)} title="결과 ?�정"><Edit2 size={16} className="text-muted" /></button>
+                         <button style={iconBtnStyle} onClick={() => deleteGame(match.id)} title="??��"><Trash2 size={16} style={{ color: '#EF4444' }} /></button>
                        </div>
                      )}
                      {isEditing && (
                        <div className="match-actions" style={{ position: 'absolute', top: '12px', right: '12px', display: 'flex', gap: '8px' }}>
-                         <button style={iconBtnStyle} onClick={() => saveEditMatch(match.id)} title="저장"><Save size={16} style={{ color: '#10B981' }} /></button>
+                         <button style={iconBtnStyle} onClick={() => saveEditMatch(match.id)} title="?�??><Save size={16} style={{ color: '#10B981' }} /></button>
                          <button style={iconBtnStyle} onClick={() => cancelEditMatch()} title="취소"><X size={16} className="text-muted" /></button>
                        </div>
                      )}
@@ -1424,18 +1424,18 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                             {isEditing ? (
                               <>
                                 <select style={selectStyle} value={editMatchData.teamA[0]} onChange={(e) => updateEditingPlayer('teamA', 0, e.target.value)}>
-                                  <option value="">선택</option>
+                                  <option value="">?�택</option>
                                   {attendees.map(a => <option key={a} value={a}>{a}</option>)}
                                 </select>
                                 <select style={selectStyle} value={editMatchData.teamA[1]} onChange={(e) => updateEditingPlayer('teamA', 1, e.target.value)}>
-                                  <option value="">선택</option>
+                                  <option value="">?�택</option>
                                   {attendees.map(a => <option key={a} value={a}>{a}</option>)}
                                 </select>
                               </>
                             ) : match.teamA.map(name => (
                               <div key={name} style={{ display: 'flex', alignItems: 'center', gap: '6px', ...(aWon ? { fontWeight: '900', color: '#10B981' } : {}) }}>
                                 <MemberAvatar photo={getMemberPhoto(name)} name={name} size={26} />
-                                <span>{aWon && '🏆 '}{name}</span>
+                                <span>{aWon && '?�� '}{name}</span>
                               </div>
                             ))}
                           </div>
@@ -1462,17 +1462,17 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                             {isEditing ? (
                               <>
                                 <select style={selectStyle} value={editMatchData.teamB[0]} onChange={(e) => updateEditingPlayer('teamB', 0, e.target.value)}>
-                                  <option value="">선택</option>
+                                  <option value="">?�택</option>
                                   {attendees.map(a => <option key={a} value={a}>{a}</option>)}
                                 </select>
                                 <select style={selectStyle} value={editMatchData.teamB[1]} onChange={(e) => updateEditingPlayer('teamB', 1, e.target.value)}>
-                                  <option value="">선택</option>
+                                  <option value="">?�택</option>
                                   {attendees.map(a => <option key={a} value={a}>{a}</option>)}
                                 </select>
                               </>
                             ) : match.teamB.map(name => (
                               <div key={name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '6px', ...(bWon ? { fontWeight: '900', color: '#10B981' } : {}) }}>
-                                <span>{name}{bWon && ' 🏆'}</span>
+                                <span>{name}{bWon && ' ?��'}</span>
                                 <MemberAvatar photo={getMemberPhoto(name)} name={name} size={26} />
                               </div>
                             ))}
@@ -1486,21 +1486,21 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                            setLiveMatchId(match.id); 
                            setActiveTab('live'); 
                          }} className="btn btn-secondary sm">
-                           <Flame size={14} style={{marginRight: '4px', color: '#EF4444'}}/> 라이브 점수판
+                           <Flame size={14} style={{marginRight: '4px', color: '#EF4444'}}/> ?�이�??�수??
                          </button>
                          <button onClick={() => saveMatchResult(match)} disabled={isEditing} className="btn btn-primary sm">
-                           결과 로컬 저장
+                           결과 로컬 ?�??
                          </button>
                        </div>
                      ) : (
                         match.scoreA === match.scoreB && !match.hasTiebreak
-  ? <div className="match-footer mt-4 center" style={{color:'#F59E0B'}}><CheckCircle2 size={16} /> 무승부! {match.scoreA} : {match.scoreB} - 오늘은 동률! 🤝</div>
+  ? <div className="match-footer mt-4 center" style={{color:'#F59E0B'}}><CheckCircle2 size={16} /> 무승부! {match.scoreA} : {match.scoreB} - ?�늘?� ?�률! ?��</div>
   : <div className="match-footer mt-4 center text-success" style={{fontWeight:'800',fontSize:'1.05rem'}}>
       <Trophy size={17} style={{marginRight:'4px'}} />
       {match.hasTiebreak
         ? (match.tiebreakA > match.tiebreakB ? match.teamA.join('+') : match.teamB.join('+'))
         : (match.scoreA > match.scoreB ? match.teamA.join('+') : match.teamB.join('+'))
-      } 승리! ({match.scoreA}:{match.scoreB}{match.hasTiebreak ? ` TB ${match.tiebreakA}:${match.tiebreakB}` : ''})
+      } ?�리! ({match.scoreA}:{match.scoreB}{match.hasTiebreak ? ` TB ${match.tiebreakA}:${match.tiebreakB}` : ''})
     </div>
                      )}
                    </div>
@@ -1508,7 +1508,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                  
                  <div className="add-match-container mt-6 center" style={{ marginTop: '24px', textAlign: 'center' }}>
                    <button className="btn btn-secondary" onClick={addGame} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px' }}>
-                     <Plus size={18} /> 새 게임 추가하기
+                     <Plus size={18} /> ??게임 추�??�기
                    </button>
                  </div>
                </div>
@@ -1523,10 +1523,10 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
               <div className="card mvp-card gradient-card">
                 <div className="mvp-label">
                   <Crown size={26} style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.25))' }} />
-                  오늘의 테니스 킹{topPlayers.length > 1 ? 'S' : ''}
+                  ?�늘???�니????topPlayers.length > 1 ? 'S' : ''}
                   {topPlayers.length > 1 && (
                     <span style={{ fontSize: '0.7rem', background: 'rgba(255,255,255,0.25)', padding: '2px 8px', borderRadius: '99px', marginLeft: '4px' }}>
-                      공동 {topPlayers.length}명
+                      공동 {topPlayers.length}�?
                     </span>
                   )}
                 </div>
@@ -1540,7 +1540,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                       </div>
                       <div className="mvp-info">
                         <span className="mvp-name" style={{ fontSize: topPlayers.length > 1 ? '1.2rem' : '1.5rem' }}>{tp.name}</span>
-                        <span className="mvp-stat">{tp.wins}승 {tp.losses}패 {tp.draws || 0}무 / {tp.points}pts 👑</span>
+                        <span className="mvp-stat">{tp.wins}??{tp.losses}??{tp.draws || 0}�?/ {tp.points}pts ?��</span>
                       </div>
                     </div>
                   ))}
@@ -1553,14 +1553,14 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                 <span className="stat-label">진행 게임</span>
                 <span className="stat-val">{completedMatches.length} <small>/ {schedule.length || 0}</small></span>
                 <button onClick={syncToGoogleSheets} disabled={isSyncing} className="btn btn-primary" style={{ padding: '8px', fontSize: '14px', width: '100%', marginTop: 'auto' }}>
-                   {isSyncing ? '저장 중...' : '구글 시트 일괄 전송'}
+                   {isSyncing ? '?�??�?..' : '구�? ?�트 ?�괄 ?�송'}
                 </button>
                 <button onClick={resetAllData} className="btn btn-secondary" style={{ padding: '8px', fontSize: '14px', width: '100%', borderColor: '#EF4444', color: '#EF4444' }}>
-                   앱 초기화
+                   ??초기??
                 </button>
               </div>
               <div className="card stat-mini">
-                <span className="stat-label">총 획득 포인트</span>
+                <span className="stat-label">�??�득 ?�인??/span>
                 <span className="stat-val">{Object.values(playerStats).reduce((acc, p) => acc + p.points, 0)} pts</span>
               </div>
             </div>
@@ -1568,7 +1568,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
             {/* Charts Section */}
             <div className="card mt-4 chart-card">
               <div className="card-header">
-                <h2>실시간 포인트 랭킹 (Top 5)</h2>
+                <h2>?�시�??�인????�� (Top 5)</h2>
                 <Target size={20} className="text-primary" />
               </div>
               <div style={{ width: '100%', height: 280 }}>
@@ -1585,18 +1585,18 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
             {pointDiffData.length > 0 && (
               <div className="card mt-4 chart-card">
                 <div className="card-header">
-                  <h2>득실차 랭킹</h2>
+                  <h2>?�실�???��</h2>
                   <BarChart3 size={20} className="text-primary" />
                 </div>
                 <p style={{ fontSize: '12px', color: '#94A3B8', margin: '-6px 0 8px', lineHeight: 1.5 }}>
-                  획득 게임에서 잃은 게임을 뺀 값입니다. 접전보다 경기 흐름을 더 잘 보여줍니다.
+                  ?�득 게임?�서 ?��? 게임??뺀 값입?�다. ?�전보다 경기 ?�름??????보여줍니??
                 </p>
                 <div style={{ width: '100%', height: 260 }}>
                   <ResponsiveContainer>
                     <BarChart data={pointDiffData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
                       <XAxis dataKey="name" axisLine={false} tickLine={false} interval={0} />
                       <YAxis />
-                      <Tooltip formatter={(value) => [`${value > 0 ? '+' : ''}${value}`, '득실차']} />
+                      <Tooltip formatter={(value) => [`${value > 0 ? '+' : ''}${value}`, '?�실�?]} />
                       <Bar dataKey="pointDiff" radius={[6, 6, 0, 0]}>
                         {pointDiffData.map(entry => (
                           <Cell key={entry.name} fill={entry.pointDiff >= 0 ? '#10B981' : '#EF4444'} />
@@ -1610,14 +1610,14 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
 
             {impactRanking.length > 0 && (
               <div className="card mt-4">
-                <div className="card-header"><h2>경기 영향도 랭킹</h2></div>
+                <div className="card-header"><h2>경기 ?�향????��</h2></div>
                 <p style={{ fontSize: '12px', color: '#94A3B8', margin: '-6px 0 8px', lineHeight: 1.5 }}>
-                  승점(승 3점, 무 1점), 득실차, 참여 경기 수를 함께 반영한 종합 지표입니다.
+                  ?�점(??3?? �?1??, ?�실�? 참여 경기 ?��? ?�께 반영??종합 지?�입?�다.
                 </p>
                 <div className="table-container">
                   <table className="stats-table">
                     <thead>
-                      <tr><th>이름</th><th>승점</th><th>득실차</th><th>승률</th><th>영향도</th></tr>
+                      <tr><th>?�름</th><th>?�점</th><th>?�실�?/th><th>?�률</th><th>?�향??/th></tr>
                     </thead>
                     <tbody>
                       {impactRanking.map(player => (
@@ -1639,9 +1639,9 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
 
             <div className="chart-row mt-4">
               <div className="card flex-1 chart-card">
-                <div className="card-header"><h2>승패 분포</h2></div>
+                <div className="card-header"><h2>?�패 분포</h2></div>
                 <p style={{ fontSize: '12px', color: '#94A3B8', margin: '-6px 0 8px', lineHeight: 1.5 }}>
-                  오늘 모든 참가자의 경기 결과를 합산한 비율이에요. 한 게임마다 승자 2명·패자 2명이 나오니, <b>승리</b>와 <b>패배</b> 합계는 항상 같고 <b>무승부</b>는 비긴 게임에 참여한 인원수예요.
+                  ?�늘 모든 참�??�의 경기 결과�??�산??비율?�에?? ??게임마다 ?�자 2명·패??2명이 ?�오?? <b>?�리</b>?� <b>?�배</b> ?�계????�� 같고 <b>무승부</b>??비긴 게임??참여???�원?�예??
                 </p>
                 <div style={{ width: '100%', height: 200 }}>
                   <ResponsiveContainer>
@@ -1651,7 +1651,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                           <Cell key={`cell-${index}`} fill={index === 0 ? '#10B981' : index === 1 ? '#F59E0B' : '#EF4444'} />
                         ))}
                       </Pie>
-                      <Tooltip formatter={(value, name) => [`${value}회`, name]} />
+                      <Tooltip formatter={(value, name) => [`${value}??, name]} />
                     </PieChart>
                   </ResponsiveContainer>
                 </div>
@@ -1659,23 +1659,23 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                   {winDistribution.map((d, i) => (
                     <span key={d.name} style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', color: '#475569' }}>
                       <span style={{ width: '10px', height: '10px', borderRadius: '3px', display: 'inline-block', background: i === 0 ? '#10B981' : i === 1 ? '#F59E0B' : '#EF4444' }} />
-                      {d.name} {d.value}회
+                      {d.name} {d.value}??
                     </span>
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* 오늘의 전체 경기 결과 */}
+            {/* ?�늘???�체 경기 결과 */}
             {participationBalance.length > 0 && (
               <div className="card mt-4">
-                <div className="card-header"><h2>참여 균형도</h2></div>
+                <div className="card-header"><h2>참여 균형??/h2></div>
                 <p style={{ fontSize: '12px', color: '#94A3B8', margin: '-6px 0 8px', lineHeight: 1.5 }}>
-                  오늘 참가자들이 얼마나 고르게 경기에 참여했는지 보여줍니다.
+                  ?�늘 참�??�들???�마??고르�?경기??참여?�는지 보여줍니??
                 </p>
                 <div className="table-container">
                   <table className="stats-table">
-                    <thead><tr><th>이름</th><th>참여 경기</th><th>평균 대비</th></tr></thead>
+                    <thead><tr><th>?�름</th><th>참여 경기</th><th>?�균 ?��?/th></tr></thead>
                     <tbody>
                       {participationBalance.map(player => (
                         <tr key={player.name}>
@@ -1694,7 +1694,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
 
             {closeMatches.length > 0 && (
               <div className="card mt-4">
-                <div className="card-header"><h2>오늘의 접전 경기</h2></div>
+                <div className="card-header"><h2>?�늘???�전 경기</h2></div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {closeMatches.slice(0, 5).map(match => (
                     <div key={match.id} style={{ padding: '10px', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0' }}>
@@ -1704,10 +1704,10 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                       </div>
                       <div style={{ fontSize: '12px', color: '#F59E0B', marginTop: '3px', fontWeight: 700 }}>
                         {match.hasTiebreak
-                          ? `타이브레이크 ${match.tiebreakA}:${match.tiebreakB}`
+                          ? `?�?�브?�이??${match.tiebreakA}:${match.tiebreakB}`
                           : match.scoreA === match.scoreB
                             ? '무승부 경기'
-                            : `점수 차 ${match.margin}`}
+                            : `?�수 �?${match.margin}`}
                       </div>
                     </div>
                   ))}
@@ -1717,7 +1717,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
 
             {completedMatches.length > 0 && (
               <div className="card mt-4">
-                <div className="card-header"><h2>🎾 오늘의 전체 경기 결과</h2></div>
+                <div className="card-header"><h2>?�� ?�늘???�체 경기 결과</h2></div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   {[...completedMatches].sort((a, b) => a.id - b.id).map(m => {
                     const aWon = m.hasTiebreak ? m.tiebreakA > m.tiebreakB : m.scoreA > m.scoreB;
@@ -1727,14 +1727,14 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                     return (
                       <div key={m.id} style={{ background: '#F8FAFC', border: '1.5px solid #F1F5F9', borderRadius: '14px', padding: '12px' }}>
                         <div style={{ fontSize: '11px', fontWeight: '800', color: '#94A3B8', marginBottom: '8px' }}>
-                          {m.id}경기{isDraw ? ' · 무승부 🤝' : ''}
+                          {m.id}경기{isDraw ? ' · 무승부 ?��' : ''}
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
                           <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
                             {m.teamA.map(name => (
                               <div key={name} style={sideStyle(aWon)}>
                                 <MemberAvatar photo={getMemberPhoto(name)} name={name} size={28} />
-                                <span>{aWon && '🏆 '}{name}</span>
+                                <span>{aWon && '?�� '}{name}</span>
                               </div>
                             ))}
                           </div>
@@ -1750,7 +1750,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                             {m.teamB.map(name => (
                               <div key={name} style={{ ...sideStyle(bWon), flexDirection: 'row-reverse' }}>
                                 <MemberAvatar photo={getMemberPhoto(name)} name={name} size={28} />
-                                <span>{name}{bWon && ' 🏆'}</span>
+                                <span>{name}{bWon && ' ?��'}</span>
                               </div>
                             ))}
                           </div>
@@ -1763,11 +1763,11 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
             )}
 
             <div className="card mt-4">
-              <div className="card-header"><h2>개인별 오늘 활동 내역</h2></div>
-              <p style={{ fontSize: '12px', color: '#94A3B8', margin: '-6px 0 8px' }}>포인트(획득 점수) 기준으로 내림차순 정렬했어요.</p>
+              <div className="card-header"><h2>개인�??�늘 ?�동 ?�역</h2></div>
+              <p style={{ fontSize: '12px', color: '#94A3B8', margin: '-6px 0 8px' }}>?�인???�득 ?�수) 기�??�로 ?�림차순 ?�렬?�어??</p>
               <div className="table-container">
                 <table className="stats-table">
-                  <thead><tr><th>이름</th><th>참여</th><th>승-무-패</th><th>승률</th><th>점수</th></tr></thead>
+                  <thead><tr><th>?�름</th><th>참여</th><th>??�???/th><th>?�률</th><th>?�수</th></tr></thead>
                   <tbody>
                     {[...new Set(completedMatches.flatMap(m => [...(m.teamA||[]), ...(m.teamB||[])]))]
                       .map(a => ({ name: a, st: playerStats[a] || { games: 0, wins: 0, losses: 0, draws: 0, points: 0 } }))
@@ -1777,9 +1777,9 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                           <td className="font-bold">{a}</td>
                           <td translate="no">{st.games}</td>
                           <td translate="no">
-                            <span className="text-success">{st.wins}승</span>{' '}
-                            <span style={{color:'#F59E0B'}}>{st.draws||0}무</span>{' '}
-                            <span style={{color:'#EF4444'}}>{st.losses}패</span>
+                            <span className="text-success">{st.wins}??/span>{' '}
+                            <span style={{color:'#F59E0B'}}>{st.draws||0}�?/span>{' '}
+                            <span style={{color:'#EF4444'}}>{st.losses}??/span>
                           </td>
                           <td translate="no">{st.games>0?Math.round(st.wins/st.games*100):0}%</td>
                           <td translate="no">{st.points}pts</td>
@@ -1789,13 +1789,13 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                 </table>
               </div>
             </div>
-          {/* 파트너 궁합 분석 */}
+          {/* ?�트??궁합 분석 */}
           {partnerStats.length > 0 && (
             <div className="card mt-4">
-              <div className="card-header"><h2>🤝 오늘의 베스트 파트너 조합</h2></div>
-              <p style={{ fontSize: '12px', color: '#94A3B8', margin: '-6px 0 8px' }}>승률 70% 이상(2게임 이상)인 조합은 <b style={{color:'#D97706'}}>🔥 고승률 듀오</b>로 강조했어요.</p>
+              <div className="card-header"><h2>?�� ?�늘??베스???�트??조합</h2></div>
+              <p style={{ fontSize: '12px', color: '#94A3B8', margin: '-6px 0 8px' }}>?�률 70% ?�상(2게임 ?�상)??조합?� <b style={{color:'#D97706'}}>?�� 고승�??�??/b>�?강조?�어??</p>
               <table className="stats-table">
-                <thead><tr><th>파트너 조합</th><th>게임</th><th>승</th><th>무</th><th>승률</th></tr></thead>
+                <thead><tr><th>?�트??조합</th><th>게임</th><th>??/th><th>�?/th><th>?�률</th></tr></thead>
                 <tbody>
                   {partnerStats.map((p,i) => {
                     const winRate = p.games > 0 ? Math.round(p.wins / p.games * 100) : 0;
@@ -1803,8 +1803,8 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                     return (
                       <tr key={p.players.join('|')} style={isHot ? { background: '#FFFBEB' } : {}}>
                         <td className="font-bold">
-                          {i===0?'🥇':i===1?'🥈':i===2?'🥉':'  '} {p.players.join(' & ')}
-                          {isHot && <span style={{ marginLeft: '6px', fontSize: '11px', fontWeight: '800', background: '#F59E0B', color: 'white', padding: '2px 7px', borderRadius: '99px' }}>🔥 고승률 듀오</span>}
+                          {i===0?'?��':i===1?'?��':i===2?'?��':'  '} {p.players.join(' & ')}
+                          {isHot && <span style={{ marginLeft: '6px', fontSize: '11px', fontWeight: '800', background: '#F59E0B', color: 'white', padding: '2px 7px', borderRadius: '99px' }}>?�� 고승�??�??/span>}
                         </td>
                         <td>{p.games}</td>
                         <td className="text-success">{p.wins}</td>
@@ -1818,16 +1818,16 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
             </div>
           )}
 
-          {/* 재미있는 개인 코멘트 */}
+          {/* ?��??�는 개인 코멘??*/}
           {partnerMatrix.length > 0 && (
             <div className="card mt-4">
-              <div className="card-header"><h2>파트너 궁합 분석</h2></div>
+              <div className="card-header"><h2>?�트??궁합 분석</h2></div>
               <p style={{ fontSize: '12px', color: '#94A3B8', margin: '-6px 0 8px', lineHeight: 1.5 }}>
-                함께 뛴 조합의 승률과 득실차를 같이 보여줍니다.
+                ?�께 ??조합???�률�??�실차�? 같이 보여줍니??
               </p>
               <div className="table-container">
                 <table className="stats-table">
-                  <thead><tr><th>조합</th><th>경기</th><th>승률</th><th>득실차</th></tr></thead>
+                  <thead><tr><th>조합</th><th>경기</th><th>?�률</th><th>?�실�?/th></tr></thead>
                   <tbody>
                     {partnerMatrix.slice(0, 8).map(pair => (
                       <tr key={pair.players.join('|')}>
@@ -1847,19 +1847,19 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
 
           {matchupStats.length > 0 && (
             <div className="card mt-4">
-              <div className="card-header"><h2>상대 조합 분석</h2></div>
+              <div className="card-header"><h2>?��? 조합 분석</h2></div>
               <p style={{ fontSize: '12px', color: '#94A3B8', margin: '-6px 0 8px', lineHeight: 1.5 }}>
-                어떤 조합이 어떤 조합을 상대로 강했는지 보여줍니다.
+                ?�떤 조합???�떤 조합???��?�?강했?��? 보여줍니??
               </p>
               <div className="table-container">
                 <table className="stats-table">
-                  <thead><tr><th>매치업</th><th>경기</th><th>결과</th><th>득실차</th></tr></thead>
+                  <thead><tr><th>매치??/th><th>경기</th><th>결과</th><th>?�실�?/th></tr></thead>
                   <tbody>
                     {matchupStats.slice(0, 6).map(row => (
                       <tr key={row.matchup}>
                         <td className="font-bold">{row.matchup}</td>
                         <td>{row.games}</td>
-                        <td>{row.teamAWins}승 / {row.draws}무 / {row.teamBWins}패</td>
+                        <td>{row.teamAWins}??/ {row.draws}�?/ {row.teamBWins}??/td>
                         <td style={{ color: row.pointDiff >= 0 ? '#10B981' : '#EF4444', fontWeight: 800 }}>
                           {row.pointDiff > 0 ? '+' : ''}{row.pointDiff}
                         </td>
@@ -1873,7 +1873,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
 
           {Object.values(playerStats).length > 0 && (
             <div className="card mt-4">
-              <div className="card-header"><h2>😄 오늘의 TMI 코멘트</h2></div>
+              <div className="card-header"><h2>?�� ?�늘??TMI 코멘??/h2></div>
               <div style={{display:'flex',flexDirection:'column',gap:'8px'}}>
                 {Object.values(playerStats).sort((a,b)=>b.wins-a.wins).map(p => (
                   <div key={p.name} style={{display:'flex',alignItems:'center',gap:'12px',padding:'8px',background:'#F8FAFC',borderRadius:'10px'}}>
@@ -1885,15 +1885,15 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
             </div>
           )}
 
-          {/* 내보내기 + 기록 저장 버튼 */}
+          {/* ?�보?�기 + 기록 ?�??버튼 */}
           <div className="card mt-4" style={{textAlign:'center'}}>
-            <div className="card-header"><h2>📤 경기 결과 공유하기</h2></div>
-            <p style={{fontSize:'13px',color:'#64748b',marginBottom:'12px'}}>HTML 파일로 저장 후 카카오톡에 공유하세요!</p>
+            <div className="card-header"><h2>?�� 경기 결과 공유?�기</h2></div>
+            <p style={{fontSize:'13px',color:'#64748b',marginBottom:'12px'}}>HTML ?�일�??�????카카?�톡??공유?�세??</p>
             <button onClick={exportDashboard} className="btn btn-primary" style={{width:'100%',padding:'14px',fontSize:'15px',background:'linear-gradient(135deg,#4F46E5,#7C3AED)'}}>
-              📥 경기 결과 HTML 다운로드
+              ?�� 경기 결과 HTML ?�운로드
             </button>
             <button onClick={saveSession} className="btn btn-secondary mt-3" style={{width:'100%',padding:'12px',fontSize:'14px'}}>
-              💾 기록 탭에 날짜별로 저장
+              ?�� 기록 ??�� ?�짜별로 ?�??
             </button>
           </div>
           </section>
@@ -1904,21 +1904,21 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
             {selectedSession ? (
               <div>
                 <button onClick={() => setSelectedSession(null)} className="btn btn-secondary" style={{marginBottom:'16px'}}>
-                  ← 목록으로
+                  ??목록?�로
                 </button>
                 <div className="card">
                   <div className="card-header">
-                    <h2>📅 {selectedSession.session_date} 경기 기록</h2>
-                    <span style={{fontSize:'13px',color:'#64748b'}}>참석 {(selectedSession.attendees||[]).length}명 · {(selectedSession.matches||[]).filter(m=>m.isCompleted).length}경기 완료</span>
+                    <h2>?�� {selectedSession.session_date} 경기 기록</h2>
+                    <span style={{fontSize:'13px',color:'#64748b'}}>참석 {(selectedSession.attendees||[]).length}�?· {(selectedSession.matches||[]).filter(m=>m.isCompleted).length}경기 ?�료</span>
                   </div>
                   <table className="stats-table" style={{marginTop:'12px'}}>
-                    <thead><tr><th>이름</th><th>참여</th><th>승-무-패</th><th>승률</th><th>점수</th></tr></thead>
+                    <thead><tr><th>?�름</th><th>참여</th><th>??�???/th><th>?�률</th><th>?�수</th></tr></thead>
                     <tbody>
                       {Object.values(selectedSession.stats||{}).sort((a,b)=>b.points-a.points).map(st => (
                         <tr key={st.name}>
                           <td className="font-bold">{st.name}</td>
                           <td>{st.games}</td>
-                          <td><span className="text-success">{st.wins}승</span> <span style={{color:'#F59E0B'}}>{st.draws||0}무</span> <span style={{color:'#EF4444'}}>{st.losses}패</span></td>
+                          <td><span className="text-success">{st.wins}??/span> <span style={{color:'#F59E0B'}}>{st.draws||0}�?/span> <span style={{color:'#EF4444'}}>{st.losses}??/span></td>
                           <td>{st.games>0?Math.round(st.wins/st.games*100):0}%</td>
                           <td>{st.points}pts</td>
                         </tr>
@@ -1927,7 +1927,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                   </table>
                 </div>
                 <div className="card mt-4">
-                  <div className="card-header"><h2>🎾 경기 결과</h2></div>
+                  <div className="card-header"><h2>?�� 경기 결과</h2></div>
                   {(selectedSession.matches||[]).filter(m=>m.isCompleted).map(m => (
                     <div key={m.id} style={{padding:'10px 0',borderBottom:'1px solid #F1F5F9',display:'flex',alignItems:'center',gap:'8px',fontSize:'14px'}}>
                       <span style={{minWidth:'50px',color:'#64748b'}}>{m.id}경기</span>
@@ -1940,12 +1940,12 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
               </div>
             ) : (
               <div>
-                <div className="card-header" style={{marginBottom:'12px'}}><h2>📋 날짜별 경기 기록</h2></div>
+                <div className="card-header" style={{marginBottom:'12px'}}><h2>?�� ?�짜�?경기 기록</h2></div>
                 {sessions.length === 0 ? (
                   <div className="card" style={{textAlign:'center',padding:'40px',color:'#94A3B8'}}>
-                    <p style={{fontSize:'32px',marginBottom:'8px'}}>📂</p>
-                    <p>저장된 기록이 없습니다.</p>
-                    <p style={{fontSize:'13px',marginTop:'8px'}}>대시보드 하단의 "기록 탭에 날짜별로 저장" 버튼을 누르면 이곳에 쌓입니다.</p>
+                    <p style={{fontSize:'32px',marginBottom:'8px'}}>?��</p>
+                    <p>?�?�된 기록???�습?�다.</p>
+                    <p style={{fontSize:'13px',marginTop:'8px'}}>?�?�보???�단??"기록 ??�� ?�짜별로 ?�?? 버튼???�르�??�곳???�입?�다.</p>
                   </div>
                 ) : (
                   <div style={{display:'flex',flexDirection:'column',gap:'8px'}}>
@@ -1955,10 +1955,10 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                         <div>
                           <div style={{fontWeight:'800',fontSize:'15px'}}>{s.session_date}</div>
                           <div style={{fontSize:'13px',color:'#64748b',marginTop:'2px'}}>
-                            참석 {(s.attendees||[]).length}명 · {(s.matches||[]).filter(m=>m.isCompleted).length}경기
+                            참석 {(s.attendees||[]).length}�?· {(s.matches||[]).filter(m=>m.isCompleted).length}경기
                           </div>
                         </div>
-                        <span style={{color:'#94A3B8',fontSize:'20px'}}>›</span>
+                        <span style={{color:'#94A3B8',fontSize:'20px'}}>??/span>
                       </div>
                     ))}
                   </div>
@@ -1978,18 +1978,18 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
             boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.2)', zIndex: 2
           };
           
-          // 타이브레이크 가능 여부: 게임이 5:5 또는 6:6 이상 동점
+          // ?�?�브?�이??가???��?: 게임??5:5 ?�는 6:6 ?�상 ?�점
           const canStartTiebreak = !isTiebreak && match.scoreA === match.scoreB && match.scoreA >= 5;
 
           return (
             <section className="tab-pane fade-in">
               <div style={{ textAlign: 'center', marginBottom: '16px' }}>
                 <h2 style={{ fontSize: '20px' }}>
-                  {match.id}경기 라이브 점수판
-                  {isTiebreak && <span style={{fontSize:'14px',background:'#FEF3C7',color:'#D97706',padding:'2px 10px',borderRadius:'99px',marginLeft:'8px',fontWeight:'800'}}>🏆 TIEBREAK</span>}
+                  {match.id}경기 ?�이�??�수??
+                  {isTiebreak && <span style={{fontSize:'14px',background:'#FEF3C7',color:'#D97706',padding:'2px 10px',borderRadius:'99px',marginLeft:'8px',fontWeight:'800'}}>?�� TIEBREAK</span>}
                 </h2>
                 <p className="text-sm text-muted">
-                  {isTiebreak ? '타이브레이크: 1점씩 올라갑니다.' : '테니스 룰(0, 15, 30, 40, AD)이 적용되었습니다.'}
+                  {isTiebreak ? '?�?�브?�이?? 1?�씩 ?�라갑니??' : '?�니??�?0, 15, 30, 40, AD)???�용?�었?�니??'}
                 </p>
               </div>
               
@@ -2043,7 +2043,7 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                 
                 {/* PASSING Logo */}
                 <div style={{ marginTop: '16px', textAlign: 'center', fontSize: '20px', fontWeight: '900', color: '#9333ea', letterSpacing: '2px', fontFamily: 'sans-serif' }}>
-                  <span style={{ color: '#c084fc' }}>♣</span> PASSING <span style={{ color: '#c084fc' }}>♥</span>
+                  <span style={{ color: '#c084fc' }}>??/span> PASSING <span style={{ color: '#c084fc' }}>??/span>
                 </div>
 
                 {/* Name Tags & Controls */}
@@ -2097,14 +2097,14 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
                   </div>
                 </div>
 
-                {/* Tiebreak 시작 / 취소 버튼 */}
+                {/* Tiebreak ?�작 / 취소 버튼 */}
                 <div style={{ marginTop: '16px', padding: '0 10px' }}>
                   {canStartTiebreak && (
                     <button
                       onClick={startTiebreak}
                       style={{ background: 'linear-gradient(135deg,#F59E0B,#D97706)', color:'white', border:'none', borderRadius:'8px', padding:'10px 24px', fontWeight:'800', fontSize:'14px', cursor:'pointer', width:'100%', letterSpacing:'0.5px' }}
                     >
-                      🏆 타이브레이크 시작 ({match.scoreA}:{match.scoreB})
+                      ?�� ?�?�브?�이???�작 ({match.scoreA}:{match.scoreB})
                     </button>
                   )}
                   {isTiebreak && (
@@ -2133,14 +2133,14 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
               <div className="mt-6 pt-6">
                 {isTiebreak && (
                   <div style={{textAlign:'center', marginBottom:'12px', padding:'10px', background:'#FEF3C7', borderRadius:'10px', fontWeight:'700', color:'#92400e'}}>
-                    🏆 타이브레이크 진행 중 · {match.scoreA}:{match.scoreB} (TB {tiebreakPoints.A}:{tiebreakPoints.B})
+                    ?�� ?�?�브?�이??진행 �?· {match.scoreA}:{match.scoreB} (TB {tiebreakPoints.A}:{tiebreakPoints.B})
                   </div>
                 )}
                 <button onClick={() => saveMatchResult(match)} className="btn btn-primary" style={{ width: '100%', padding: '16px', fontSize: '16px' }}>
-                  경기 종료 및 결과 저장
+                  경기 종료 �?결과 ?�??
                 </button>
                 <button onClick={() => setActiveTab('schedule')} className="btn btn-secondary mt-3" style={{ width: '100%', padding: '12px' }}>
-                  일정으로 돌아가기
+                  ?�정?�로 ?�아가�?
                 </button>
               </div>
             </section>
@@ -2149,4 +2149,4 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
       </main>
     </div>
   );
-}
+}
