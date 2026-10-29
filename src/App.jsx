@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './App.css';
 import { insforge } from './insforgeClient';
+import { useSharedSync } from './useSharedSync.js';
 import {
   Users, UserPlus, Trophy, BarChart3, History, CheckCircle2,
   CalendarDays, Target, Flame, Edit2, Trash2, Plus, Save, X, Camera, Crown
@@ -301,11 +302,6 @@ export default function App() {
   }, [tiebreakPoints]);
 
   // === 친구들과 실시간으로 공유하는 상태 동기화 (InsForge: tennis_shared_state 단일 행) ===
-  const SHARED_STATE_ID = 1;
-  const isHydratedRef = useRef(false);
-  const lastSyncedRef = useRef('');
-  const pushTimerRef = useRef(null);
-
   const buildSharedPayload = () => ({
     attendees,
     core_members: coreMembers,
@@ -340,71 +336,13 @@ export default function App() {
     setCompletedMatches(normalized.schedule.filter(m => m.isCompleted));
   };
 
-  // 최초 로드: 서버 공유 상태를 가져와 반영하거나, 서버가 비어있으면 내 로컬 데이터를 시드로 업로드
-  useEffect(() => {
-    (async () => {
-      const { data, error } = await insforge.database
-        .from('tennis_shared_state')
-        .select()
-        .eq('id', SHARED_STATE_ID)
-        .maybeSingle();
-
-      if (error || !data) {
-        isHydratedRef.current = true;
-        return;
-      }
-
-      const serverIsEmpty = (!data.schedule || data.schedule.length === 0) && (!data.attendees || data.attendees.length === 0);
-      const hasLocalData = schedule.length > 0 || attendees.length > 0;
-
-      if (serverIsEmpty && hasLocalData) {
-        const payload = buildSharedPayload();
-        lastSyncedRef.current = JSON.stringify(payload);
-        await insforge.database.from('tennis_shared_state').update(payload).eq('id', SHARED_STATE_ID);
-      } else {
-        const normalized = normalizeSharedRow(data);
-        lastSyncedRef.current = JSON.stringify(normalized);
-        applyRemoteState(normalized);
-      }
-      isHydratedRef.current = true;
-    })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // 변경 사항을 디바운스 후 서버에 업로드 (내가 기록 중/완료한 내용을 친구들에게 전파)
-  useEffect(() => {
-    if (!isHydratedRef.current) return;
-    if (pushTimerRef.current) clearTimeout(pushTimerRef.current);
-    pushTimerRef.current = setTimeout(async () => {
-      const payload = buildSharedPayload();
-      const snapshot = JSON.stringify(payload);
-      if (snapshot === lastSyncedRef.current) return;
-      lastSyncedRef.current = snapshot;
-      await insforge.database.from('tennis_shared_state').update(payload).eq('id', SHARED_STATE_ID);
-    }, 800);
-    return () => clearTimeout(pushTimerRef.current);
-  }, [attendees, coreMembers, schedule, scheduleGenerated, liveMatchId, livePoints, isTiebreak, tiebreakPoints]);
-
-  // 친구들의 변경사항을 주기적으로 확인해 반영 (5초 폴링)
-  useEffect(() => {
-    const timer = setInterval(async () => {
-      if (!isHydratedRef.current) return;
-      const { data, error } = await insforge.database
-        .from('tennis_shared_state')
-        .select()
-        .eq('id', SHARED_STATE_ID)
-        .maybeSingle();
-      if (error || !data) return;
-
-      const normalized = normalizeSharedRow(data);
-      const snapshot = JSON.stringify(normalized);
-      if (snapshot === lastSyncedRef.current) return;
-
-      lastSyncedRef.current = snapshot;
-      applyRemoteState(normalized);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
+  const sharedPayload = useMemo(buildSharedPayload, [attendees, coreMembers, schedule,
+    scheduleGenerated, liveMatchId, livePoints, isTiebreak, tiebreakPoints]);
+  const sharedSync = useSharedSync({ database: insforge.database, payload: sharedPayload,
+    normalize: normalizeSharedRow, applyRemote: applyRemoteState });
+  const syncLabels = { loading: '서버 기록 확인 중', pending: '저장 대기 · 기기 내 보관',
+    saving: '서버 저장 중', saved: '서버 저장 확인 완료',
+    error: '통신/저장 실패 · 재시도 대기', conflict: '다른 기록 감지 · 선택 필요' };
 
   // 경기 기록 목록 로드
   useEffect(() => {
@@ -1216,6 +1154,34 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
       </header>
 
       <main className="main-content">
+        <section className="sync-status" aria-label="공유 기록 저장 상태">
+          <div role="status" aria-live="polite"><strong>{syncLabels[sharedSync.state]}</strong></div>
+          {sharedSync.error && <p role="alert">{sharedSync.error}</p>}
+          {sharedSync.storageError && <p role="alert">{sharedSync.storageError}</p>}
+          <div className="sync-actions">
+            {sharedSync.state === 'error' && <button className="btn btn-primary" onClick={sharedSync.retry}>지금 재시도</button>}
+            <button className="btn" onClick={sharedSync.download}>기록 백업 내려받기</button>
+          </div>
+          {sharedSync.conflict && <>
+            <p>내 미저장 기록과 서버 기록을 자동으로 합치지 않았습니다. 아래 기록을 비교하고 선택하세요.
+              선택 전 두 기록을 기기에 백업합니다. 다른 기기에서도 계속 수정하면 다시 충돌할 수 있습니다.</p>
+            <details><summary>내 기록 / 서버 기록 비교</summary>
+              <div className="sync-comparison">
+                <div><h3>내 미저장 기록</h3><pre>{JSON.stringify(sharedSync.conflict.local, null, 2)}</pre></div>
+                <div><h3>서버 기록</h3><pre>{JSON.stringify(sharedSync.conflict.server, null, 2)}</pre></div>
+              </div>
+            </details>
+            <div className="sync-actions">
+              <button className="btn" onClick={() => {
+                if (window.confirm('내 미저장 기록 대신 서버 기록을 적용할까요? 현재 두 기록은 기기에 백업됩니다.')) sharedSync.resolve('server');
+              }}>서버 기록 적용</button>
+              <button className="btn" onClick={() => {
+                if (window.confirm('서버의 참가자·대진표·점수를 내 기록 전체로 교체할까요? 다른 기기의 기록이 교체될 수 있습니다.')) sharedSync.resolve('local');
+              }}>내 기록으로 저장</button>
+            </div>
+          </>}
+        </section>
+
         <nav className="tab-nav">
           <button className={`tab-btn ${activeTab === 'attendance' ? 'active' : ''}`} onClick={() => setActiveTab('attendance')}>
             <Users size={18} /> 출석
@@ -2154,3 +2120,4 @@ ${pairRows ? `<div class="card"><h2>🤝 베스트 파트너</h2><table><thead><
     </div>
   );
 }
+

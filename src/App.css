@@ -607,3 +607,8 @@ body {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+.sync-status { margin-bottom: 16px; padding: 12px; border: 1px solid #cbd5e1; border-radius: 12px; background: #f8fafc; color: #1e293b; }
+.sync-status p { margin: 8px 0; overflow-wrap: anywhere; }
+.sync-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.sync-comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px; }
+.sync-comparison pre { max-height: 260px; overflow: auto; font-size: 12px; background: white; padding: 8px; }
