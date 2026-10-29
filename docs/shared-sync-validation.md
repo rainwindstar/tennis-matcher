@@ -38,6 +38,16 @@
 이 실패를 코드 빌드/린트 통과로 표시하지 않는다. 의존성/lockfile 버전은 변경하지 않았다.
 GitHub Actions에는 의존성이 필요 없는 회귀 테스트와 별도 빌드/린트 작업을 추가했다.
 
+이후 GitHub Actions 실행 **40806132039**, 구현 커밋
+`545552d64c970d67008914723d4a0f54d7935c8e`에서 다음 항목의 성공을 확인했다.
+
+- `regression`: `npm test` 성공.
+- `build-and-lint`: `npm ci`, `npm run build`, `npm run lint` 모두 성공.
+- Vercel PR 프리뷰 상태도 성공으로 보고되었다. 프리뷰에 접속하거나 운영 DB를
+  이용해 동작을 검증한 것은 아니다.
+
+실행 근거: https://github.com/rainwindstar/tennis-matcher/actions/runs/40806132039
+
 ## PC·모바일 및 스테이징 추가 검증
 
 운영 기록 대신 별도 InsForge 테스트 프로젝트/복제 테이블과 가상 참가자를 사용한다.
